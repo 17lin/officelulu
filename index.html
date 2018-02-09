@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html"charset="UTF-8"/>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta property="og:title" content="Chiayi Office lulu">
+		<meta property="og:description" content="Chiayi Office lulu">
+		<meta property="og:type" content="website">
+		<title>Chiayi Office lulu</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+		<script type="text/javascript" src="loadfirebase"></script>
+		<script type="text/javascript" src="updatetime"></script>
+		<script type="text/javascript" src="changeweather"></script>
+		<script type="text/javascript" src="changeplace"></script>
+		<script type="text/javascript" src="changeword"></script>
+		<script type="text/javascript" src="changepic"></script>
+		<script type="text/javascript" src="changecase"></script>
+	</head>
+	<body>
+		<ul class="nav">
+			<li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+		</ul>
+		<div class="container-fluid" style="text-align: center;">
+			<h4 id = "TPW"><span id = "timestring">Time</span><span id = "weatherstring">Weather</span><span id = "placestring">Place</span></h4>
+			<img src = "123.jpg" class="img-fluid rounded border border-secondary" alt="Responsive image">
+			<h5>Some words</h5>
+		</div>
+		<div id = "copyright" style="text-align: center;"></div>
+		<script type="text/javascript">
+			//星期，小時，地點，天氣
+			var nowState = [0,0,0,0];
+			loadFirebaseData();
+			setInterval(reflashtime(nowState),1);
+			//changeWeather(nowState);
+			//changePlace(nowState);
+			console.log(nowState);
+			var copyright = '網站原始碼 by 資訊科十七 ';
+			document.getElementById("copyright").innerHTML = copyright;
+		</script>
+	</body>
+</html>

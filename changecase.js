@@ -1,0 +1,3 @@
+function changeCase(nowState){
+	
+}
